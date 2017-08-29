@@ -48,6 +48,7 @@ debug_sdcc_ix: all_sdcc_ix
 debug_sdcc_iy: all_sdcc_iy
 
 distro:
+	$(RM) build/vt_sound.zip
 	cd ..; $(ZIP) vt_sound/build/vt_sound.zip vt_sound/include vt_sound/lib
 
 clean:
