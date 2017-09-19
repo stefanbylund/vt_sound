@@ -26,7 +26,7 @@ This download contains the following header files and libraries:
 * vt_sound/lib/sdcc_ix/vt_sound.lib
 * vt_sound/lib/sdcc_iy/vt_sound.lib
 
-If you want to build the vt_sound libraries yourself, see the "How to build"
+If you want to build the vt_sound libraries yourself, see the "How to Build"
 section below.
 
 ## API Documentation
