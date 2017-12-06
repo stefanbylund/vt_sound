@@ -18,7 +18,7 @@ contains a simple example program demonstrating how to use this API.
 
 ## Download
 
-The latest version of this API can be downloaded [here](build/vt_sound.zip).
+The latest version of this API can be downloaded **[here](build/vt_sound.zip)**.
 This download contains the following header files and libraries:
 
 * vt_sound/include/vt_sound.h
