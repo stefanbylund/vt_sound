@@ -29,13 +29,21 @@ _vt_get_setup:
 _vt_init:
     ; hl contains module address
     di
+    push ix
+    push iy
     call VT_INIT
+    pop iy
+    pop ix
     ei
     ret
 
 _vt_play:
     di
+    push ix
+    push iy
     call VT_PLAY
+    pop iy
+    pop ix
     ei
     ret
 
