@@ -49,15 +49,13 @@ extern void vt_init(const void *module_address) __z88dk_fastcall;
 
 /*
  * Plays one snippet of the module. Call this function each 1/50 second to play
- * the module continuously. If you want to call this function from an interrupt
- * service routine, you can use the vt_play_isr() function which is tailored to
- * be used as an ISR.
+ * the module continuously, e.g. from your interrupt service routine.
  */
 extern void vt_play(void);
 
 /*
- * This function is tailored for installation as an IM2 interrupt service
- * routine to play the module in the background.
+ * This function is tailored for installation as a self-contained IM2 interrupt
+ * service routine to play the module in the background.
  */
 extern void vt_play_isr(void);
 

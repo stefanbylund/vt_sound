@@ -37,15 +37,7 @@ _vt_init:
     ei
     ret
 
-_vt_play:
-    di
-    push ix
-    push iy
-    call VT_PLAY
-    pop iy
-    pop ix
-    ei
-    ret
+DEFC _vt_play = VT_PLAY
 
 _vt_play_isr:
     push af
