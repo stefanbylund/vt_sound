@@ -31,6 +31,7 @@
 #define _VT_SOUND_H
 
 #include <stdint.h>
+#include <stdbool.h>
 
 /*
  * Returns a pointer to the VT player's setup byte.
@@ -50,6 +51,8 @@ extern void vt_init(const void *module_address) __z88dk_fastcall;
 /*
  * Plays one snippet of the module. Call this function each 1/50 second to play
  * the module continuously, e.g. from your interrupt service routine.
+ * The AF, BC, DE, HL, AF', BC', DE', HL', IX, IY registers should be preserved
+ * when calling vt_play().
  */
 extern void vt_play(void);
 
@@ -60,18 +63,17 @@ extern void vt_play(void);
 extern void vt_play_isr(void);
 
 /*
- * Enables (enabled = 1) or disables (enabled = 0) the vt_play_isr() interrupt
- * service routine. The vt_play_isr() interrupt service routine is initially
- * enabled.
+ * Enables (true) or disables (false) the vt_play_isr() interrupt service
+ * routine. The vt_play_isr() interrupt service routine is initially enabled.
  */
-extern void vt_set_play_isr_enabled(int enabled) __z88dk_fastcall;
+extern void vt_set_play_isr_enabled(bool enabled) __z88dk_fastcall;
 
 /*
  * Mutes the sound. Call vt_play() to continue playing again.
  *
  * If the vt_play_isr() interrupt service routine is used, call
- * vt_set_play_isr_enabled(0) before calling vt_mute() to mute the sound.
- * Call vt_set_play_isr_enabled(1) to continue playing again.
+ * vt_set_play_isr_enabled(false) before calling vt_mute() to mute the sound.
+ * Call vt_set_play_isr_enabled(true) to continue playing again.
  */
 extern void vt_mute(void);
 

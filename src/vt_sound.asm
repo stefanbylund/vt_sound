@@ -53,9 +53,8 @@ _vt_play_isr:
     push ix
     push iy
 
-    ld hl,(_vt_play_isr_enabled)
-    ld a,h
-    or l
+    ld a,(_vt_play_isr_enabled)
+    or a
     call nz,VT_PLAY
 
     pop iy
@@ -74,8 +73,9 @@ _vt_play_isr:
     reti
 
 _vt_set_play_isr_enabled:
-    ; hl contains enablement/disablement parameter
-    ld (_vt_play_isr_enabled),hl
+    ; l contains enablement/disablement parameter
+    ld a,l
+    ld (_vt_play_isr_enabled),a
     ret
 
 _vt_mute:
@@ -91,4 +91,4 @@ _vt_get_cur_pos:
 SECTION data_user
 
 _vt_play_isr_enabled:
-    DEFW 1
+    DEFB 1
