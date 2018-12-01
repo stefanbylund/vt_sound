@@ -11,7 +11,8 @@
 ;uses the SjASM assembler syntax. The code section can be executed from RAM or
 ;ROM, contains no self-modifying code, and can be assembled at any address.
 ;The data section contains the variables and self-modifying code and can be
-;located at any address in RAM.
+;located at any address in RAM. The MUTE routine has been extended to also
+;disable all channels.
 
 ;Features
 ;--------
@@ -129,6 +130,8 @@ CHECKLP:
 	LD HL,ChanA+CHP_NtSkCn
 	INC (HL)
 MUTE:
+	LD A,$3F
+	LD (AYREGS+Mixer),A
 	XOR A
 	LD H,A
 	LD L,A
