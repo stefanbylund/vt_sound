@@ -13,8 +13,8 @@ contains no self-modifying code, and can be assembled at any address. The data
 section contains the variables and self-modifying code and can be located at any
 address in RAM.
 
-The [vt_sound_demo](https://github.com/stefanbylund/vt_sound_demo) project
-contains a simple example program demonstrating how to use this API.
+The [demo](demo) folder contains a simple example program demonstrating how to
+use this API.
 
 ## Download
 
@@ -74,8 +74,8 @@ vt_sound.lib.
 9. Run your program in a Sinclair ZX Spectrum emulator with AY-3-8912 sound chip
 support.
 
-**Tip:** See the [vt_sound_demo](https://github.com/stefanbylund/vt_sound_demo)
-project for a simple example of how to use vt_sound.h and link with vt_sound.lib.
+**Tip:** See the [demo](demo) folder for a simple example of how to use
+vt_sound.h and link with vt_sound.lib.
 
 **Tip:** If you copy the vt_sound header files and libraries into the following
 directories in z88dk, the z88dk compiler will automatically find them without

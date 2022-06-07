@@ -1,4 +1,4 @@
-syntax: glob
 lib/
+bin/
 zcc_opt.def
 zcc_proj.lst
